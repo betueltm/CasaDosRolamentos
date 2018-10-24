@@ -1,0 +1,209 @@
+2018-08-08 12:50:53.515 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 12:50:53.548 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 12:50:53.548 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 12:50:53.548 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 12:50:53.548 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 12:53:48.177 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 12:53:48.208 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 12:53:48.208 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 12:53:48.209 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 12:53:48.209 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 12:55:36.488 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 12:55:36.518 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 12:55:36.518 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 12:55:36.518 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 12:55:36.518 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 12:57:50.848 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 12:57:50.877 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 12:57:50.877 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 12:57:50.878 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 12:57:50.878 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 12:59:19.832 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 12:59:19.859 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 12:59:19.860 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 12:59:19.860 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 12:59:19.860 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 13:00:31.261 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 13:00:31.292 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 13:00:31.292 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 13:00:31.293 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 13:00:31.293 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 13:01:49.395 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 13:01:49.424 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 13:01:49.424 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 13:01:49.424 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 13:01:49.424 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 13:06:22.243 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 13:06:22.272 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 13:06:22.272 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 13:06:22.272 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 13:06:22.272 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 13:24:32.843 -03:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+2018-08-08 13:24:32.955 -03:00 [FTL] Application startup exception
+Npgsql.NpgsqlOperationInProgressException: The connection is already in state 'Executing'
+   at Npgsql.NpgsqlConnector.<StartUserAction>g__DoStartUserAction|186_0(<>c__DisplayClass186_0& ) in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1648
+   at Npgsql.NpgsqlConnector.StartUserAction(ConnectorState newState, NpgsqlCommand command) in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1661
+   at Npgsql.NpgsqlConnector.Rollback(Boolean async) in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1172
+   at Npgsql.NpgsqlTransaction.<Rollback>d__21.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlTransaction.cs:line 192
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlTransaction.Rollback() in C:\projects\npgsql\src\Npgsql\NpgsqlTransaction.cs:line 185
+   at Npgsql.NpgsqlTransaction.Dispose(Boolean disposing) in C:\projects\npgsql\src\Npgsql\NpgsqlTransaction.cs:line 300
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.ClearTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.EntityFrameworkCore.DbContext.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Identity.Startup.InitializeDatabase(IApplicationBuilder app) in C:\Users\user\source\repos\BackEnd\Identity\Startup.cs:line 143
+   at Identity.Startup.Configure(IApplicationBuilder app) in C:\Users\user\source\repos\BackEnd\Identity\Startup.cs:line 91
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-08-08 13:25:29.626 -03:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+2018-08-08 13:25:29.672 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source)
+   at Identity.Startup.InitializeDatabase(IApplicationBuilder app) in C:\Users\user\source\repos\BackEnd\Identity\Startup.cs:line 135
+   at Identity.Startup.Configure(IApplicationBuilder app) in C:\Users\user\source\repos\BackEnd\Identity\Startup.cs:line 91
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-08-08 13:26:26.750 -03:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-08-08 13:26:26.778 -03:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-08-08 13:26:26.779 -03:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-08-08 13:26:26.779 -03:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-08-08 13:26:26.779 -03:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-08-08 13:27:35.454 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-08 13:29:23.079 -03:00 [DBG] Augmenting SignInContext
+2018-08-08 13:29:23.083 -03:00 [DBG] Adding idp claim with value: local
+2018-08-08 13:29:23.083 -03:00 [DBG] Adding amr claim with value: pwd
+2018-08-08 13:29:23.083 -03:00 [DBG] Adding auth_time claim with value: 1533745763
+2018-08-08 13:29:23.095 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-08-08 13:29:23.168 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "alice",
+  "SubjectId": "8a88b93d-9af1-4399-83db-cc1d980ba1aa",
+  "DisplayName": "alice",
+  "Endpoint": "UI",
+  "ActivityId": "0HLFT9F21HDRP:00000001",
+  "TimeStamp": "2018-08-08T16:29:23Z",
+  "ProcessId": 14932,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-08-08 13:29:23.180 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:23.180 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:23.219 -03:00 [DBG] 0 persisted grants found for 8a88b93d-9af1-4399-83db-cc1d980ba1aa
+2018-08-08 13:29:32.517 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:32.518 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:34.296 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:34.296 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:29:34.313 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-08-08 13:29:34.313 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-08-08 13:29:34.313 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-08-08 13:29:34.324 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "8a88b93d-9af1-4399-83db-cc1d980ba1aa",
+  "DisplayName": "Alice Smith",
+  "ActivityId": "0HLFT9F21HDRP:00000004",
+  "TimeStamp": "2018-08-08T16:29:34Z",
+  "ProcessId": 14932,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-08-08 13:29:38.345 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-08-08 13:29:38.348 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-08-08 13:29:38.348 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-08-08 13:29:38.352 -03:00 [DBG] Start discovery request
+2018-08-08 13:29:38.654 -03:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-08-08 13:29:45.775 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-08 13:29:47.334 -03:00 [INF] AuthenticationScheme: Google was challenged.
+2018-08-08 13:36:44.372 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-08 13:36:55.100 -03:00 [DBG] Augmenting SignInContext
+2018-08-08 13:36:55.100 -03:00 [DBG] Adding idp claim with value: local
+2018-08-08 13:36:55.100 -03:00 [DBG] Adding amr claim with value: pwd
+2018-08-08 13:36:55.100 -03:00 [DBG] Adding auth_time claim with value: 1533746215
+2018-08-08 13:36:55.101 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-08-08 13:36:55.102 -03:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "204f2de4-f75b-435d-8a22-0e7a44247632",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLFT9F21HDS0:00000004",
+  "TimeStamp": "2018-08-08T16:36:55Z",
+  "ProcessId": 14932,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-08-08 13:36:55.108 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:36:55.108 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 13:36:55.110 -03:00 [DBG] 0 persisted grants found for 204f2de4-f75b-435d-8a22-0e7a44247632
+2018-08-08 19:12:40.212 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:40.216 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:43.840 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:43.840 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:46.353 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:46.353 -03:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-08-08 19:12:46.357 -03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-08-08 19:12:46.357 -03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-08-08 19:12:46.357 -03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-08-08 19:12:46.358 -03:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "204f2de4-f75b-435d-8a22-0e7a44247632",
+  "DisplayName": "Bob Smith",
+  "ActivityId": "0HLFT9F21HDS5:00000003",
+  "TimeStamp": "2018-08-08T22:12:46Z",
+  "ProcessId": 14932,
+  "LocalIpAddress": "::1:5000",
+  "RemoteIpAddress": "::1"
+}
+2018-08-08 19:12:51.645 -03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-08-08 19:12:56.720 -03:00 [INF] AuthenticationScheme: Google was challenged.

@@ -4,6 +4,8 @@
 
 using Identity.Data;
 using Identity.Models;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
+using System.Reflection;
 
 namespace Identity
 {
@@ -27,8 +31,10 @@ namespace Identity
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var connString = Configuration.GetConnectionString("DefaultConnection");
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(connString));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -49,10 +55,19 @@ namespace Identity
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
             })
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApis())
-                .AddInMemoryClients(Config.GetClients())
-                .AddAspNetIdentity<ApplicationUser>();
+                .AddConfigurationStore(configDb =>
+                {
+                    configDb.ConfigureDbContext = db => db.UseNpgsql(connString,
+                    sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                
+                .AddOperationalStore(operationDb =>
+                 {
+                     operationDb.ConfigureDbContext = db => db.UseNpgsql(connString,
+                         sql => sql.MigrationsAssembly(migrationsAssembly));
+                 })
+
+                 .AddAspNetIdentity<ApplicationUser>();
 
             if (Environment.IsDevelopment())
             {
@@ -73,6 +88,7 @@ namespace Identity
 
         public void Configure(IApplicationBuilder app)
         {
+            InitializeDatabase(app);
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -86,6 +102,45 @@ namespace Identity
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();
+        }
+
+        private void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var persistedGrantDbContext = serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>();
+                persistedGrantDbContext.Database.Migrate();
+
+                var configDbContext = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                configDbContext.Database.Migrate();
+
+                if (!configDbContext.Clients.Any())
+                {
+                    foreach(var client in Config.GetClients())
+                    {
+                        configDbContext.Clients.Add(client.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+
+                if (!configDbContext.IdentityResources.Any())
+                {
+                    foreach (var res in Config.GetIdentityResources())
+                    {
+                        configDbContext.IdentityResources.Add(res.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+
+                if (!configDbContext.ApiResources.Any())
+                {
+                    foreach (var api in Config.GetApis())
+                    {
+                        configDbContext.ApiResources.Add(api.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+            }
         }
     }
 }
