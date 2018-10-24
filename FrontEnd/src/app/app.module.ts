@@ -12,10 +12,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from '../material-module';
+import { VendasComponent } from './vendas/vendas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VendasComponent
   ],
   imports: [
     BrowserModule,
