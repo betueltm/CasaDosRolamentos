@@ -13,11 +13,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
 import { MaterialModule } from '../material-module';
 import { VendasComponent } from './vendas/vendas.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ProdutoComponent } from './cadastroproduto/cadastroproduto.component';
+import { ProdutoService } from './services/servicoprotudo.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VendasComponent
+    VendasComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +31,9 @@ import { VendasComponent } from './vendas/vendas.component';
     MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

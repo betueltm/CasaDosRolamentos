@@ -1,0 +1,6 @@
+﻿{
+  "database": {
+    "connectionString": "host=localhost;port=5432;database=sad;user id=postgres;password=postgres",
+    "timeoutSeconds": 5
+  }
+}

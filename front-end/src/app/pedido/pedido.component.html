@@ -1,0 +1,83 @@
+<mat-card>
+  <form [formGroup]="pedidoForm" (ngSubmit)="onSubmit()">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" type="submit">Salvar Pedido</button>
+      <p>Total do pedido: R$ {{total}}</p>
+    </div>
+    <mat-form-field>
+      <input matInput placeholder="Seu Ze" formControlName="cliente">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="21/10/1999" formControlName="data">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Xaxim" formControlName="cidade">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="SC" formControlName="estado">
+    </mat-form-field>
+
+  </form>
+</mat-card>
+<mat-card>
+  <form [formGroup]="produtoForm" (ngSubmit)="adicionarProduto()">
+    <mat-form-field>
+      <mat-select placeholder="Produto" formControlName="id">
+        <mat-option *ngFor="let item of produtosCadastrados" value="{{item.produtoid}}">
+          {{item.nome}} - R$ {{item.valor}}
+        </mat-option>
+        
+      </mat-select>
+      
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" type="submit">Adicionar</button>
+    </div>
+  </form>
+  <br />
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <div class="listagem mat">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.produtoid}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+        <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
+        <td mat-cell *matCellDef="let row"> {{row.valor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+        <td mat-cell *matCellDef="let row"> {{row.categoria}} </td>
+      </ng-container>
+      <ng-container matColumnDef="opcoes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Excluir </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-button (click)="removerProduto(row)"><mat-icon>delete</mat-icon></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+
+
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+
+</mat-card>
